@@ -1,0 +1,22 @@
+﻿/* ==========================================================================
+                            Bootstrap Override File
+   ========================================================================== */
+
+navbar-nav > li > a {
+    text-shadow: 5px 5px 30px #fff !important;
+    color: ghostwhite !important;
+}
+
+a {
+    color: ghostwhite !important;
+}
+
+.navbar-brand {
+    float: none !important;
+    color: #06111e !important;
+}
+
+
+h2{
+    color: ghostwhite !important;
+}

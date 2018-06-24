@@ -1,15 +1,21 @@
-# humanstxt.org/
-# The humans responsible & technology colophon
+/* TEAM */
 
-# TEAM
+Title: BaiQiLongMa (if you want the translation it's Mandarin combining the mythical Bai Long Ma (white dragon horse) from Monkey King fable with the #7 for 7 dragon horses)
 
-    <name> -- <role> -- <twitter>
+Site: email, link to a contact form, etc.
 
-# THANKS
+Location: Cyber-space						
+							
+/* THANKS */
 
-    <name>
+Name: Professor Ioffe
+                            
+/* SITE */
+                         
+Last update: YYYY/MM/DD                        
 
-# TECHNOLOGY COLOPHON
+Standards: HTML5, CSS3,...                            
 
-    HTML5, CSS3
-    jQuery, Modernizr
+Components: Modernizr, jQuery, etc.                           
+
+Software: just Visual Studio Code

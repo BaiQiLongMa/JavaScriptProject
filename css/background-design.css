@@ -1,0 +1,138 @@
+﻿/* ---------------------- Section Header Begins ---------------------------- */
+
+/* Background */
+
+/* 
+    I had previously did some work with stars so I am just pulling from my work to add 
+    design to it. Normally, I compartmentalize large CSS files
+*/
+
+/* ---------------------- Section Header Ends ---------------------------- */
+
+/* ---------------------- Background Begins ---------------------------- */
+
+body {
+    background: #06111e !important;
+}
+
+.twinkling {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.starImg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0.6;
+    background: url("../img/stars-img.png");
+    z-index: -3;
+}
+
+.sky {
+    background: -webkit-radial-gradient(50% bottom,#06111e,#06111e,#010018);
+    background: radial-gradient(at 50% bottom,#06111e,#06111e,#010018);
+    background-repeat: no-repeat;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -4;
+}
+
+.star {
+    width: 7px;
+    height: 7px;
+    background: #fff;
+    box-shadow: 0 0 3px #fff;
+    position: relative;
+    border-radius: 50%;
+}
+
+.twinkle-star-1 {
+    width: 7px;
+    height: 7px;
+    -webkit-animation: twinkle 0.6s alternate infinite;
+    animation: twinkle 0.6s alternate infinite;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+
+.twinkle-star-2 {
+    width: 5px;
+    height: 5px;
+    -webkit-animation: twinkle 0.75s alternate infinite;
+    animation: twinkle 0.75s alternate infinite;
+    -webkit-animation-delay: 3.5s;
+    animation-delay: 3.5s;
+}
+
+.twinkle-star-3 {
+    width: 3px;
+    height: 3px;
+    -webkit-animation: twinkle 0.95s alternate infinite;
+    animation: twinkle 0.95s alternate infinite;
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+}
+
+@-webkit-keyframes twinkle {
+    0% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.sky-star1, .sky-star2 {
+    height: auto;
+    position: absolute;
+    width: 100%;
+    z-index: -2;
+}
+
+.sky-star3 {
+    height: 50%;
+    position: absolute;
+    width: 100%;
+    z-index: -2;
+}
+
+
+
+@media only screen and (max-width:760px) {
+    .sky, .starImg, .twinkling, body, #canvas2, sky-star1, .sky-star2, sky-star1, .sky-star3 {
+        min-height: 100%;
+        min-width: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+
+/* ---------------------- Background Begins ---------------------------- */

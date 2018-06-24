@@ -1,106 +1,156 @@
-<!doctype html>
+﻿<!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>NASA API</title>
+    <meta name="description" content="Baruch Project">
+    <meta name="keywords" content="Baruch, JavaScript, AJAX, JSON, NASA">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/background-design.css" />
+    <link rel="stylesheet" href="css/custom-bootstrap-override.css" />
+    <style>
+        body {
+            padding-top: 50px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<body data-spy="scroll" data-target="#body-area">
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
+    <!-- If I was fully developing an app, I may use scroll-spy if you want to create sectionalized markers => it is there for use if needed but not currently implemented -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-controls="nothingToSee" data-target="#nothingToSee" aria-expanded="false">
+                    <span class="sr-only">NASA Finder</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="img/tile.png" class="nasa-logo float-left" alt="NASA" />
+                <a class="navbar-brand" href="#">NASA Project  <i>&ndash; Baruch College</i></a>
             </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
+
+            <h2 id="nothingToSee" class="collapse text-center well">
+                Nothing to see here <br />
+                (because its only one page)
+            </h2>
         </div><!--/.navbar-collapse -->
-      </div>
     </nav>
-
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-      </div>
+    <div class="jumbotron-container margin-top">
+        <div class="container">
+            <div class="row margin-top jumbotron-images">
+            <img src="img/rocket-left.png" class="jumbotron-logos center-block col-xs-4 img-responsive" alt="Rocket Icon Left" />
+            <img src="img/tile-wide.png" class="jumbotron-logos col-xs-4 img-responsive" alt="NASA Logo Jumbo Image" />
+            <img src="img/rocket-right.png" class="jumbotron-logos col-xs-4 img-responsive" alt="Rocket Icon Right" />
+        </div>
+        </div>
     </div>
 
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+
+    <div class="container content-section">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                    <h2 class="text-center">Asteroids</h2>
+                    <p class="text-center"><i>(the number of Asteroids that came close to Earth between 06/16/2018 - 06/23/3018)</i></p>
+                <p>
+                    <button class="col-xs-12 btn btn-primary" type="button" data-toggle="collapse" data-target="#asteroidsAreComing" aria-expanded="false" aria-controls="asteroidsAreComing">
+                            Check for Asteroids &raquo;
+                          </button>
+                </p>
+             
+                <div id="asteroidsAreComing" class="col-xs-12 collapse text-center">
+                <div class="col-xs-12">Near Earth Asteroids: &nbsp;</div>
+                <div id="near-asteroid-count" class="col-xs-12"></div>
+                <br />                               
+            </div>
+            </div>
+        
+
+
+            
+            <div class="col-xs-12 col-sm-6">
+                <h2 class="text-center">Browse NASA</h2>
+                <p class="text-center"><i>(check for names of Asteroids &amp; <br /> Explore it's information)</i></p>
+                <p>
+                <button type="submit" class="col-xs-12 btn btn-primary" type="button" data-toggle="collapse" data-target="#browseAsteroids" aria-expanded="false" aria-controls="browseAsteroids">Names of Asteroids  &raquo;</button>
+                </p>
+         
+            <div id="browseAsteroids" class="col-xs-12 collapse text-center">
+                        <div id="namesOfAsteroids" class="col-xs-12 text-center">Asteroid Names:</div>
+                        <div id="asteroidsNamesResults" class="col-xs-12"></div>
+                        <iframe id="showAsteroid" scrolling="yes" height="100%" width ="100%" src=""></iframe>
+            </div>
         </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
-      </div>
 
-      <hr>
 
-      <footer>
-        <p>&copy; Company 2015</p>
-      </footer>
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-        <script src="js/vendor/bootstrap.min.js"></script>
 
-        <script src="js/main.js"></script>
+        <div class="sky">
+            <div class="sky-star1"></div>
+            <div class="sky-star2"></div>
+            <div class="sky-star3"></div>
+        </div>
+        <div class="starImg"></div>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
-    </body>
+
+        <hr>
+    </div> <!-- /container -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <!--There are other ways to write the footer year better (like not having it inline for starters), but it fits the current purpose for the project-->
+                &copy;
+                <script>
+                    var currentYear = 2018;
+                    var thisYear = new Date().getFullYear();
+                    if (thisYear > currentYear) {
+                        document.write("2018 -" + new Date().getFullYear());
+                    } else {
+                        document.write(new Date().getFullYear());
+                    }
+                </script>,  NASA Project
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>  <!--The original library was erroring out so replaced with working CDN-->
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/stars-animate.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <!--<script>
+       //*** Not worrying about analytics for the Project **** 
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+                function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+            e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X', 'auto'); ga('send', 'pageview');
+    </script>-->
+
+</body>
 </html>
